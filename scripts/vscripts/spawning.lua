@@ -78,7 +78,7 @@ function SpawnItems(target_name, amount, index)
         })
         -- spawn second shotgun ammo
         if class == 'item_hlvr_clip_shotgun_single' then
-            SpawnEntityFromTableSynchronous(kind, {
+            SpawnEntityFromTableSynchronous(class, {
                 origin = target:GetOrigin(),
                 angles = RandomInt(0,359)..' '..RandomInt(0,359)..' '..RandomInt(0,359)
             })
@@ -104,11 +104,12 @@ function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
         origin = target:GetOrigin(),
         angles = RandomInt(0,359)..' '..RandomInt(0,359)..' '..RandomInt(0,359),
 
+        damagefilter = '@filter_damage_keycard',
         targetname = keycard_name,
         model = 'models/props/misc/keycard_001.vmdl',
         skin = keycard_skin,
         rendercolor = keycard_color..' 255',
-        CanDepositInItemHolder = "1"
+        CanDepositInItemHolder = '1'
     })
 end
 
