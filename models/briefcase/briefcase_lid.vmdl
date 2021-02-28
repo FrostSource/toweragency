@@ -1,0 +1,151 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\briefcase\\dmx\\briefcase_lid.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = ""
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ 6.96006, -0.602275, 9.48844 ]
+							angles_left = [ 64.6699, -90.6065, 82.9825 ]
+							origin_right = [ 6.96006, 0.602275, 9.48844 ]
+							angles_right = [ 64.669907, 90.606491, -82.982491 ]
+							max_distance = 3.0
+							finger_thumb = 1.0
+							finger_pinky = 0.345
+							finger_ring = 0.295
+							finger_middle = 0.27
+							finger_index = 0.333
+							has_extent = true
+							show_extent_helper = true
+							extent_origin_left = [ -7.10627, -0.602275, 9.48844 ]
+							extent_origin_min_left = [ 6.96006, -0.602275, 9.48844 ]
+							extent_origin_right = [ -7.10627, 0.602275, 9.48844 ]
+							extent_origin_min_right = [ 6.96006, 0.602275, 9.48844 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "vr_carry_type"
+						game_keys = 
+						{
+							carry_type = "1"
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						name = "top"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ -0.017128, -0.569727, 0.107262 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 18.670616, 0.332596, 15.957088 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "right"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ -9.243233, 0.022103, 0.107262 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.218409, 1.516257, 15.957088 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "left"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ 9.2326, 0.018068, 0.107262 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.171156, 1.508187, 15.957088 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "front"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ -0.017128, 0.020373, 7.991765 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 18.670616, 1.512797, 0.188085 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "back"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ -0.017128, 0.019859, -7.736588 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 18.670616, 1.511769, 0.269387 ]
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}
