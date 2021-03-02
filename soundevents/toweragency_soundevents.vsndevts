@@ -18,5 +18,19 @@
 			"sounds/paper/paper_grab_05.vsnd"
 		]
 	}
+	
+	"Tower.BigPhatBoom" =
+	{
+		type = "hlvr_default_3d"
+		volume = 2.0
+		volume_falloff_min = 20.0
+		volume_falloff_max = 600.0
+		spread_min = 10
+		spread_max = 60
+		vsnd_files =
+		[
+			"sounds/misc/bigphatboom.vsnd",
+		]
+	}
 
 }
