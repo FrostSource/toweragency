@@ -1,0 +1,186 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = ""
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "rendermeshshape0.vmat"
+								to = "materials/models/props_subway/newspaper_stack01_fullstack_blackmesa.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsJointList"
+				children = 
+				[
+					{
+						_class = "PhysicsJointWeld"
+						disabled = true
+						parent_body = "bone001"
+						child_body = "bone002"
+						anchor_origin = [ 0.0, 0.0, 0.0 ]
+						anchor_angles = [ 0.0, 0.0, 0.0 ]
+						collision_enabled = false
+						linear_freqeuncy = 0.0
+						linear_damping_ratio = 0.0
+						max_force = 0.0
+						angular_frequency = 0.0
+						angular_damping_ratio = 0.0
+						max_torque = 0.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						disabled = true
+						parent_body = "bone002"
+						child_body = "bone003"
+						anchor_origin = [ 4.98195, 0.060865, 0.0 ]
+						anchor_angles = [ 0.0, 0.0, 0.0 ]
+						collision_enabled = false
+						friction = 0.0
+						enable_swing_limit = false
+						swing_limit = 0.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -0.436332
+						max_twist_angle = 0.436332
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "bone001"
+						child_body = "bone002"
+						anchor_origin = [ 4.98195, 0.060865, 0.0 ]
+						anchor_angles = [ 0.0, 0.0, 90.0 ]
+						collision_enabled = false
+						friction = 0.0
+						enable_swing_limit = false
+						swing_limit = 0.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = false
+						min_twist_angle = 0.0
+						max_twist_angle = 0.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						name = "_copy"
+						parent_body = "bone002"
+						child_body = "bone003"
+						anchor_origin = [ 5.1682, 0.052442, 0.0 ]
+						anchor_angles = [ 0.0, 0.0, 90.0 ]
+						collision_enabled = false
+						friction = 0.0
+						enable_swing_limit = false
+						swing_limit = 0.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = false
+						min_twist_angle = 0.0
+						max_twist_angle = 0.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "bone001"
+						child_body = "bone001"
+						anchor_origin = [ 0.0, 0.0, 0.0 ]
+						anchor_angles = [ 0.0, 0.0, 0.0 ]
+						collision_enabled = false
+						friction = 0.0
+						enable_swing_limit = false
+						swing_limit = 0.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = false
+						min_twist_angle = 0.0
+						max_twist_angle = 0.0
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "bone001"
+						surface_prop = "prop.paper_newspaper"
+						collision_prop = "default"
+						origin = [ 2.326592, 0.112014, 0.952401 ]
+						angles = [ 2.071973, -1.03409, 0.137428 ]
+						dimensions = [ 5.20295, 19.115704, 1.415542 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "bone002"
+						surface_prop = "prop.paper_newspaper"
+						collision_prop = "default"
+						origin = [ 2.353202, 0.028223, 0.746615 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 5.652768, 19.115704, 1.088005 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = "bone003"
+						surface_prop = "prop.paper_newspaper"
+						collision_prop = "default"
+						origin = [ 2.393773, -0.063101, 0.668154 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 6.4543, 19.095003, 1.059814 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/apartment/newspaper_attached.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}
