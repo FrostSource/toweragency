@@ -1,0 +1,86 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CPostProcessData"
+	m_layers = 
+	[
+		{
+			_class = "CVibranceColorCorrectionLayer"
+			m_name = "Saturation/Vibrance 0"
+			m_nOpacityPercent = 100
+			m_bVisible = true
+			m_pLayerMask = null
+			m_nVibrance = 22
+			m_nSaturation = -28
+		},
+		{
+			_class = "CBloomLayer"
+			m_name = "Bloom 0"
+			m_nOpacityPercent = 100
+			m_bVisible = true
+			m_pLayerMask = null
+			m_params = 
+			{
+				m_blendMode = "BLOOM_BLEND_ADD"
+				m_flBloomStrength = 3.807
+				m_flScreenBloomStrength = 1.0
+				m_flBlurBloomStrength = 1.0
+				m_flBloomThreshold = 0.0
+				m_flBloomThresholdWidth = 1.0
+				m_flSkyboxBloomStrength = 1.0
+				m_flBloomStartValue = 1.0
+				m_flBlurWeight = 
+				[
+					0.1999, 0.1999, 0.1999, 0.1999,
+					0.1999,
+				]
+				m_vBlurTint = 
+				[
+					[ 1.0, 1.0, 1.0 ],
+					[ 1.0, 1.0, 1.0 ],
+					[ 1.0, 1.0, 1.0 ],
+					[ 1.0, 1.0, 1.0 ],
+					[ 1.0, 1.0, 1.0 ],
+				]
+			}
+		},
+		{
+			_class = "CColorTintColorCorrectionLayer"
+			m_name = "Color Tint 0"
+			m_nOpacityPercent = 100
+			m_bVisible = true
+			m_pLayerMask = null
+			m_nTintColorR = 35
+			m_nTintColorG = 73
+			m_nTintColorB = 155
+			m_nStrength = 26
+			m_bPreserveLuminosity = true
+		},
+		{
+			_class = "CBrightnessContrastColorCorrectionLayer"
+			m_name = "Brightness/Contrast 0"
+			m_nOpacityPercent = 100
+			m_bVisible = true
+			m_pLayerMask = null
+			m_nBrightness = 3
+			m_nContrast = 16
+		},
+		{
+			_class = "CToneMappingLayer"
+			m_name = "Tone Mapping 0"
+			m_nOpacityPercent = 100
+			m_bVisible = true
+			m_pLayerMask = null
+			m_params = 
+			{
+				m_flExposureBias = -0.76
+				m_flShoulderStrength = 0.1499
+				m_flLinearStrength = 0.32
+				m_flLinearAngle = 0.0999
+				m_flToeStrength = 0.1999
+				m_flToeNum = 0.02
+				m_flToeDenom = 0.2999
+				m_flWhitePoint = 3.9996
+			}
+		},
+	]
+}

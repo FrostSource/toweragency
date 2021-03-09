@@ -1,0 +1,30 @@
+"tower_agency_main"
+{
+    "playevent"
+	{
+		"event"	"AmbientA1Intro.CityNiceElevationLp01"
+		"volume"	"0.75"
+		"traveler"	"CityNiceElevationLp01"
+	}
+
+	"playevent"
+	{
+		"event"	"AmbientA1Intro.ApartmentBasementLp"
+		"volume"	"0.7"
+		"traveler"	"ApartmentBasementLp"
+	}
+
+	"playevent"
+	{
+		"event"	"AmbientA1Intro.ApartmentHallLp"
+		"volume"	"0.6"
+		"traveler"	"ApartmentHallLp"
+	}
+	
+	"playevent"
+	{
+		"event"	"AmbientA1Intro.ElevatorIntLp"
+		"volume"	"0.65"
+		"traveler"	"ElevatorIntLp"
+	}
+}

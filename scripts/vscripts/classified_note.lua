@@ -4,7 +4,7 @@ CurrentSkin = CurrentSkin or 0
 MaxSkin = MaxSkin or 9
 
 function Spawn()
-    thisEntity:RedirectOutput('OnPlayerUse', 'StartDetecting', thisEntity)
+    thisEntity:RedirectOutput('OnPlayerPickup', 'StartDetecting', thisEntity)
     thisEntity:RedirectOutput('OnPhysGunDrop', 'StopDetecting', thisEntity)
 end
 

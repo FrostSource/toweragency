@@ -1,0 +1,377 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\props_junk\\dmx\\mesh\\wood_crate002a_breakable.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "BreakPieceList"
+				children = 
+				[
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece1.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece2.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece3.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece4.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece5.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece6.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece7.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece8.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece9.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece10.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece11.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece12.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece13.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props_junk/wood_crate001a/piece14.vmdl"
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Wooden.Large"
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = 30.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "vr_carry_type"
+						game_keys = 
+						{
+							carry_type = "8"
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "ao_proxy_box"
+						game_keys = 
+						{
+							bonename = ""
+							dimensions = [ 39.6585, 67.3003, 38.4536 ]
+							offset_origin = [ 0.065035, -0.254188, -0.678641 ]
+							offset_angles = [ 0.0, 0.0, 0.0 ]
+						}
+					},
+					{
+						_class = "BreakCommand"
+						game_class = "break_create_joint_revolute"
+						game_keys = 
+						{
+							parent_piece = ""
+							child_piece = ""
+							anchor_position = [ 0.0, 0.0, 0.0 ]
+							anchor_angles = [ 0.0, 0.0, 0.0 ]
+							friction = 0.0
+							enable_limit = false
+							min_angle = 0.0
+							max_angle = 0.0
+						}
+					},
+					{
+						_class = "BreakCommand"
+						game_class = "break_create_particle"
+						game_keys = 
+						{
+							name = resource:"particles/breakable_effects/wood_crate_break_particles.vpcf"
+							cp0_model = resource:"models/props_junk/wood_crate001a/break_particles.vmdl"
+							cp0_snapshot = resource:"particles/models/props_junk/wood_crate001a/break_particles1.vsnap"
+							skin_cp = 1
+							damage_position_cp = -1
+							damage_direction_cp = -1
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "MaterialGroup"
+						name = "painted"
+						remaps = 
+						[
+							{
+								from = "materials/models/props_junk/woodcrates01a.vmat"
+								to = "materials/models/props_junk/woodcrates01a_painted.vmat"
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.wood_crate_large"
+						collision_prop = "default"
+						origin = [ -0.00515, -0.023736, -0.016875 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 40.352066, 67.621201, 40.082607 ]
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

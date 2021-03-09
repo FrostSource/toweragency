@@ -80,6 +80,7 @@
 					},
 					{
 						_class = "GenericGameData"
+						disabled = true
 						game_class = "hand_pose_pair"
 						game_keys = 
 						{
@@ -114,12 +115,8 @@
 						}
 					},
 					{
-						_class = "GenericGameData"
-						game_class = "vr_carry_type"
-						game_keys = 
-						{
-							carry_type = "0"
-						}
+						_class = "Prefab"
+						target_file = "models/classified_note/prefabs/handposes.vmdl_prefab"
 					},
 					{
 						_class = "GenericGameData"
@@ -130,6 +127,14 @@
 							handpose_model = "models/props/max/handposes/handpose_grabpole.vmdl"
 							allow_procedural_handpose = false
 							global_pose_template = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "vr_carry_type"
+						game_keys = 
+						{
+							carry_type = "0"
 						}
 					},
 				]

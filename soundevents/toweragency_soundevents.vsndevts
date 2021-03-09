@@ -58,7 +58,7 @@
 		volume_falloff_max = 200.0
 		spread_min = 5
 		spread_max = 45
-		restart_time = 29.54 
+		//restart_time = 29.54 
 		vsnd_files =
 		[
 			"sounds/music/green_wave_loop.vsnd",
@@ -78,6 +78,33 @@
 			"sounds/world/elevator_apartment/light_flicker_01.vsnd",
 			"sounds/world/elevator_apartment/light_flicker_02.vsnd",
 			"sounds/world/elevator_apartment/light_flicker_03.vsnd",
+		]
+	}
+
+	"Tower.Briefcase.Unlock" =
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 10.0
+		volume_falloff_max = 500.0
+		vsnd_files =
+		[
+			"sounds/briefcase/briefcase_latch_unlock_01.vsnd",
+			"sounds/briefcase/briefcase_latch_unlock_02.vsnd",
+			"sounds/briefcase/briefcase_latch_unlock_03.vsnd",
+		]
+	}
+	"Tower.Briefcase.Lock" =
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 10.0
+		volume_falloff_max = 500.0
+		vsnd_files =
+		[
+			"sounds/briefcase/briefcase_latch_lock_01.vsnd",
+			"sounds/briefcase/briefcase_latch_lock_02.vsnd",
+			"sounds/briefcase/briefcase_latch_lock_03.vsnd",
 		]
 	}
 }

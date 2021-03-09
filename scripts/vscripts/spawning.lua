@@ -2,16 +2,16 @@
 local ItemPool = {
     -- 1st floor (base)
     {
-        { class = 'item_hlvr_clip_energygun', weight = 1 },
+        { class = 'item_hlvr_clip_energygun', weight = 1.1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.5 },
+        { class = 'item_healthvial', weight = 0.3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.02 },
     },
     -- 2nd floor (damaged)
     {
-        { class = 'item_hlvr_clip_energygun', weight = 1 },
+        { class = 'item_hlvr_clip_energygun', weight = 1.1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.5 },
+        { class = 'item_healthvial', weight = 0.3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.02 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.6 },
         { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.1 },
@@ -20,9 +20,9 @@ local ItemPool = {
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.5 },
-        { class = 'item_hlvr_grenade_frag', weight = 0.02 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.6 },
+        { class = 'item_healthvial', weight = 0.4 },
+        { class = 'item_hlvr_grenade_frag', weight = 0.2 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.5 },
         { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.1 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.5 },
     },
@@ -30,10 +30,27 @@ local ItemPool = {
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.15 },
-        { class = 'item_healthvial', weight = 0.6 },
+        { class = 'item_healthvial', weight = 0.4 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.7 },
         { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.15 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.5 },
+    },
+    -- 4th floor (white arena RESTOCK)
+    {
+        { class = 'item_hlvr_clip_energygun', weight = 1 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.3 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.7 },
+        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.3 },
+        { class = 'item_hlvr_clip_rapidfire', weight = 0.5 },
+    },
+    -- 5th floor (ending)
+    {
+        { class = 'item_hlvr_clip_energygun', weight = 1 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
+        { class = 'item_healthvial', weight = 0.2 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.75 },
+        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.3 },
+        { class = 'item_hlvr_clip_rapidfire', weight = 0.4 },
     },
 }
 
@@ -129,6 +146,6 @@ function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
         rendercolor = keycard_color..' 255',
         CanDepositInItemHolder = '1'
     })
-    debugoverlay:Sphere(target:GetOrigin(), 16, 0, 255, 0, 255, true, 60)
+    --debugoverlay:Sphere(target:GetOrigin(), 16, 0, 255, 0, 255, true, 60)
 end
 
