@@ -4,14 +4,14 @@ local ItemPool = {
     {
         { class = 'item_hlvr_clip_energygun', weight = 1.1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.3 },
+        { class = 'item_healthvial', weight = 0.25, max = 4 },
         { class = 'item_hlvr_grenade_frag', weight = 0.02 },
     },
     -- 2nd floor (damaged)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1.1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.3 },
+        { class = 'item_healthvial', weight = 0.25, max = 4 },
         { class = 'item_hlvr_grenade_frag', weight = 0.02 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.6 },
         { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.1 },
@@ -20,7 +20,7 @@ local ItemPool = {
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.4 },
+        { class = 'item_healthvial', weight = 0.3, max = 8 },
         { class = 'item_hlvr_grenade_frag', weight = 0.2 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.5 },
         { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.1 },
@@ -30,7 +30,7 @@ local ItemPool = {
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.15 },
-        { class = 'item_healthvial', weight = 0.4 },
+        { class = 'item_healthvial', weight = 0.4, max = 8 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.7 },
         { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.15 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.5 },
@@ -47,7 +47,7 @@ local ItemPool = {
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.2 },
+        { class = 'item_healthvial', weight = 0.2, max = 2 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.75 },
         { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.3 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.4 },
@@ -62,13 +62,14 @@ function GetItemWeightTotal(index)
     return weight_sum
 end
 
+-- Returns TABLE of item values
 function GetRandomItem(index)
     local weight_sum = GetItemWeightTotal(index)
     local weight_remaining = RandomFloat(0, weight_sum)
     for _,v in ipairs(ItemPool[index]) do
         weight_remaining = weight_remaining - v.weight
         if weight_remaining < 0 then
-            return v.class
+            return v
         end
     end
 end
@@ -84,32 +85,40 @@ function SpawnItems(target_name, amount, index)
         return
     end
 
+    -- Keeping track of item count
+    local itemCount = {}
+    for _,v in ipairs(ItemPool[index]) do
+        itemCount[v.class] = 0
+    end
+
     for i=0,amount do
         -- Grab a random target
         if #targets == 0 then
             print('Attempt to spawn ammo - Ran out of targets! '..(amount -  i)..' left.')
             return
         end
+
+        -- Choose info_target
         local pos = RandomInt(1,#targets)
         local target = targets[pos]
+
+        -- Choose item
+        local item = GetRandomItem(index)
+        while item.max ~= nil and itemCount[item.class] >= item.max do
+            item = GetRandomItem(index)
+        end
+        itemCount[item.class] = itemCount[item.class] + 1
+
+        -- Remove target from availability
         table.remove(targets, pos)
 
-        local class = GetRandomItem(index)
-
-        -- Which ammo does this target spawn?
-        --local kind = 'item_hlvr_clip_energygun'
-        --if ends_with(target:GetName(), 'shotgun') then kind = 'item_hlvr_clip_shotgun_single'
-        --elseif ends_with(target:GetName(), 'rapidfire') then kind = 'item_hlvr_clip_rapidfire'
-        --elseif ends_with(target:GetName(), 'healthpen') then kind = 'item_healthvial'
-        --end
-
         -- Spawn the ammo with random angles
-        SpawnEntityFromTableSynchronous(class, {
+        SpawnEntityFromTableSynchronous(item.class, {
             origin = target:GetOrigin(),
             angles = RandomInt(0,359)..' '..RandomInt(0,359)..' '..RandomInt(0,359)
         })
         -- spawn second shotgun ammo
-        if class == 'item_hlvr_clip_shotgun_single' then
+        if item.class == 'item_hlvr_clip_shotgun_single' then
             SpawnEntityFromTableSynchronous(class, {
                 origin = target:GetOrigin(),
                 angles = RandomInt(0,359)..' '..RandomInt(0,359)..' '..RandomInt(0,359)
