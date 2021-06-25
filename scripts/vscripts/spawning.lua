@@ -3,28 +3,28 @@ local ItemPool = {
     -- 1st floor (base)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1.1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.25, max = 4 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09 },
+        { class = 'item_healthvial', weight = 0.25, max = 3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.02 },
     },
     -- 2nd floor (damaged)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1.1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.25, max = 4 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.08 },
+        { class = 'item_healthvial', weight = 0.25, max = 3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.02 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.6 },
-        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.1 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.7 },
+        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.3 },
     },
     -- 3rd floor (construction)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
-        { class = 'item_healthvial', weight = 0.3, max = 8 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.08 },
+        { class = 'item_healthvial', weight = 0.3, max = 5 },
         { class = 'item_hlvr_grenade_frag', weight = 0.2 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.5 },
-        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.1 },
-        { class = 'item_hlvr_clip_rapidfire', weight = 0.5 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.7 },
+        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.2 },
+        { class = 'item_hlvr_clip_rapidfire', weight = 0.6 },
     },
     -- 4th floor (white arena)
     {
@@ -79,6 +79,7 @@ end
 --end
 
 function SpawnItems(target_name, amount, index)
+    local item_count = 0
     local targets = Entities:FindAllByName(target_name..'*')
     if #targets == 0 then
         print('Attempt to spawn ammo - No target entity found!')
@@ -112,18 +113,22 @@ function SpawnItems(target_name, amount, index)
         -- Remove target from availability
         table.remove(targets, pos)
 
+        local class = item.class
+        local count_per_this_item = 1
+        if item.class == 'item_hlvr_clip_shotgun_multiple' then
+            class = 'item_hlvr_clip_shotgun_single'
+            count_per_this_item = 2
+        end
+
         -- Spawn the ammo with random angles
-        SpawnEntityFromTableSynchronous(item.class, {
-            origin = target:GetOrigin(),
-            angles = RandomInt(0,359)..' '..RandomInt(0,359)..' '..RandomInt(0,359)
-        })
-        -- spawn second shotgun ammo
-        if item.class == 'item_hlvr_clip_shotgun_single' then
+        for _ = 1, count_per_this_item do
             SpawnEntityFromTableSynchronous(class, {
                 origin = target:GetOrigin(),
-                angles = RandomInt(0,359)..' '..RandomInt(0,359)..' '..RandomInt(0,359)
+                --angles = RandomInt(0,359)..' '..RandomInt(0,359)..' '..RandomInt(0,359)
+                angles = QAngle(RandomInt(0,359),RandomInt(0,359),RandomInt(0,359))
             })
         end
+
     end
 end
 
@@ -156,5 +161,12 @@ function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
         CanDepositInItemHolder = '1'
     })
     --debugoverlay:Sphere(target:GetOrigin(), 16, 0, 255, 0, 255, true, 60)
+end
+
+function DebugShowKeycards()
+    local cards = Entities:FindAllByModel("models/props/misc/keycard_001.vmdl")
+    for _,card in ipairs(cards) do
+        debugoverlay:Sphere(card:GetOrigin(), 16, 0, 255, 0, 255, true, 60)
+    end
 end
 

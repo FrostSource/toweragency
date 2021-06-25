@@ -29,7 +29,7 @@ function DetectSide()
 
     local dot = up:Dot(playerForward)
 
-    
+
     --debugoverlay:Sphere(thisEntity:GetOrigin(), dot*2, 0, 255, 0, 255, true, 0.01)
 
     if WaitingForFront then
@@ -45,6 +45,9 @@ function DetectSide()
     end
 
     if CurrentSkin >= MaxSkin then
+        --local expl = ParticleManager:CreateParticle("particles/note_destruction.vpcf", 0, thisEntity)
+        --ParticleManager:SetParticleControl(expl, 0, thisEntity:GetOrigin())
+        --StartSoundEventFromPosition("Tower.FireWoosh", thisEntity:GetOrigin())
         DoEntFireByInstanceHandle(thisEntity, 'FireUser1', '', 0, nil, nil)
         return
     end

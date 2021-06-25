@@ -33,6 +33,20 @@
 		]
 	}
 	
+	"Tower.RelaxNow" =
+	{
+		type = "hlvr_default_3d"
+		volume = 3.0
+		volume_falloff_min = 20.0
+		volume_falloff_max = 600.0
+		spread_min = 10
+		spread_max = 60
+		vsnd_files =
+		[
+			"sounds/misc/relax_now.vsnd",
+		]
+	}
+	
 	"Lights.Flicker.NeonFlicker" =
 	{
 		type = "hlvr_default_3d"
@@ -105,6 +119,17 @@
 			"sounds/briefcase/briefcase_latch_lock_01.vsnd",
 			"sounds/briefcase/briefcase_latch_lock_02.vsnd",
 			"sounds/briefcase/briefcase_latch_lock_03.vsnd",
+		]
+	}
+	"Tower.FireWoosh" =
+	{
+		type = "hlvr_default_3d"
+		volume = 3.0
+		volume_falloff_min = 10.0
+		volume_falloff_max = 500.0
+		vsnd_files =
+		[
+			"sounds/misc/fire_woosh.vsnd",
 		]
 	}
 }
