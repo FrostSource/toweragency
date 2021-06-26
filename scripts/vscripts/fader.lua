@@ -33,7 +33,7 @@ end
 
 function FadeThink()
     CurrentFadeValue = CurrentFadeValue + AmountToFadePerFrame
-    DoEntFireByInstanceHandle(thisEntity, 'FireUser4', CurrentFadeValue..'', 0, nil, nil)
+    --DoEntFireByInstanceHandle(thisEntity, 'FireUser4', CurrentFadeValue..'', 0, nil, nil)
     --print('check valid')
     if IsValidEntity(TargetToFade) then
         local a = TargetToFade:GetRenderAlpha()

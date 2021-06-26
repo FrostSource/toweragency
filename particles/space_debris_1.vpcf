@@ -1,0 +1,156 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf26:version{26288658-411e-4f14-b698-2e1e5d00dec6} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 10
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_MaintainEmitter"
+			m_nParticlesToMaintain = 50
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusRandExponent = 10.0
+			m_flRadiusMax = 2.0
+			m_flRadiusMin = 0.5
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = 250.0
+			m_fRadiusMax = 750.0
+			m_vecDistanceBias = [ 1.0, 1.0, 0.1 ]
+			m_bLocalCoords = true
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 240, 240, 240, 255 ]
+			m_ColorMax = [ 150, 150, 150, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_nFieldOutput = "20"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_nFieldOutput = "12"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomRotationSpeed"
+			m_flDegreesMax = 15.0
+			m_nFieldOutput = "20"
+		},
+		{
+			_class = "C_INIT_RandomRotationSpeed"
+			m_flDegreesMax = 15.0
+			m_nFieldOutput = "12"
+		},
+		{
+			_class = "C_INIT_RandomRotationSpeed"
+			m_flDegreesMax = 15.0
+		},
+		{
+			_class = "C_INIT_VelocityRandom"
+			m_LocalCoordinateSystemSpeedMin = [ -1.0, 0.5, 0.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ -2.5, 2.0, 0.0 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flEndFadeInTime = 0.05
+			m_flStartFadeOutTime = 0.95
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/props/cigarette_pack_3.vmdl"
+				},
+				{
+					m_model = resource:"models/props/cigarette_pack_4.vmdl"
+				},
+				{
+					m_model = resource:"models/props/interior_deco/cigarette_002.vmdl"
+				},
+				{
+					m_model = resource:"models/props/distillery/bottle_vodka.vmdl"
+				},
+				{
+					m_model = resource:"models/props_junk/garbage_bag_1.vmdl"
+				},
+				{
+					m_model = resource:"models/props/television_1.vmdl"
+				},
+				{
+					m_model = resource:"models/props_discoverable/newspaper_blackmesa.vmdl"
+				},
+				{
+					m_model = resource:"models/props/interior_deco/interior_deco_poster_notice_001i.vmdl"
+				},
+				{
+					m_model = resource:"models/props/interior_furniture/interior_pillow_001.vmdl"
+				},
+			]
+			m_bDisableShadows = true
+			m_bForceLoopingAnimation = true
+			m_vecColorScale = 
+			{
+				m_nType = "PVEC_TYPE_LITERAL_COLOR"
+				m_LiteralColor = [ 255, 255, 255 ]
+			}
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/space/space_debris_dust.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/space/space_debris_dust_2.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/space/space_debris_1_small_models.vpcf"
+			m_bDisableChild = true
+		},
+	]
+	m_nMaxParticles = 50
+}

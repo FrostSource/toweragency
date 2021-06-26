@@ -14,6 +14,48 @@
 			"sounds/apartment/door_knock.vsnd"
 		]
 	}
+
+	"Apartment.DoorKnockEcho1" =
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 100.0
+		volume_falloff_max = 1000.0
+		spread_min = 10
+		spread_max = 60
+		vsnd_files =
+		[
+			"sounds/apartment/door_knock_echo.vsnd"
+		]
+	}
+
+	"Apartment.DoorKnockEcho2" =
+	{
+		type = "hlvr_default_3d"
+		volume = 6
+		volume_falloff_min = 100.0
+		volume_falloff_max = 1000.0
+		spread_min = 10
+		spread_max = 60
+		vsnd_files =
+		[
+			"sounds/apartment/door_knock_echo2.vsnd"
+		]
+	}
+
+	"Apartment.DoorKnockEcho3" =
+	{
+		type = "hlvr_default_3d"
+		volume = 3
+		volume_falloff_min = 100.0
+		volume_falloff_max = 2048.0
+		spread_min = 10
+		spread_max = 60
+		vsnd_files =
+		[
+			"sounds/apartment/door_knock_echo3.vsnd"
+		]
+	}
 	
 	"Apartment.PaperSlip" =
 	{
@@ -54,6 +96,25 @@
 		vsnd_files =
 		[
 			"sounds/apartment/door_unlocks.vsnd"
+		]
+	}
+	
+	"scary.higgs_breath" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		volume_falloff_min = 50.0
+		volume_falloff_max = 1000.0
+		volume_fade_in = 0.3
+		volume_fade_out = 0.3
+		vsnd_files = 
+		[
+			"sounds/scary/higgs_breath_1.vsnd",
+			"sounds/scary/higgs_breath_2.vsnd",
+			"sounds/scary/higgs_breath_3.vsnd",
+			"sounds/scary/higgs_breath_4.vsnd",
+			"sounds/scary/higgs_breath_5.vsnd",
+			"sounds/scary/higgs_breath_6.vsnd",
 		]
 	}
 

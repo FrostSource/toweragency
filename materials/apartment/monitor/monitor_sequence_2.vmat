@@ -1,0 +1,47 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "vr_monitor.vfx"
+
+	//---- Animation ----
+	F_TEXTURE_ANIMATION 1
+
+	//---- Chromatic Abberation ----
+	g_flBlueShift "0.150"
+	g_flGreenShift "0.175"
+	g_flJitterSpeed "1.700"
+	g_flRedShift "0.250"
+	TextureJitterControl "materials/default/default.tga"
+
+	//---- Contrast ----
+	TextureContrastControl "materials/default/default.tga"
+
+	//---- Display ----
+	g_flFilmGrainStrength "0.250"
+	g_flTintScale "1.000"
+	g_vColorTint "[0.850980 1.000000 0.972549 0.000000]"
+	g_vScanlineTextureOffset "[0.000 0.000]"
+	ScanlineDistortion "materials/default/default_color.tga"
+	TextureColor "materials/apartment/monitor/monitor_imageseq_1.png"
+	TextureFilmGrain "materials/default/default.tga"
+	TextureScanlines "materials/default/default_color.tga"
+	TextureVignette "materials/default/default.tga"
+
+	//---- Specular ----
+	g_flReflectionStrength "0.250"
+	g_fSpecularRoughness "0.350"
+	SpecularDirt "materials/default/default_normal.tga"
+	SpecularDistortion "materials/default/default_normal.tga"
+
+	//---- Texture Animation ----
+	g_flAnimationFrame "0.000"
+	g_flAnimationTimeOffset "0.000"
+	g_flAnimationTimePerFrame "1.013"
+	g_nNumAnimationCells "6"
+	g_vAnimationGrid "[2 3]"
+
+	//---- VSYNC ----
+	g_flVSYNCJumpScale "0.010"
+	VSyncControl "materials/default/default.tga"
+}
