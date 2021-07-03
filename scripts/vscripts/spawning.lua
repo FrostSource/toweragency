@@ -2,15 +2,16 @@
 local ItemPool = {
     -- 1st floor (base)
     {
-        { class = 'item_hlvr_clip_energygun', weight = 1.1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09 },
+        { class = 'item_hlvr_clip_energygun', weight = 1 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 3 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.6, max = 12 },
         { class = 'item_healthvial', weight = 0.25, max = 3 },
-        { class = 'item_hlvr_grenade_frag', weight = 0.02 },
+        { class = 'item_hlvr_grenade_frag', weight = 0.02, max = 1 },
     },
     -- 2nd floor (damaged)
     {
-        { class = 'item_hlvr_clip_energygun', weight = 1.1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.08 },
+        { class = 'item_hlvr_clip_energygun', weight = 1 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 3 },
         { class = 'item_healthvial', weight = 0.25, max = 3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.02 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.7 },
