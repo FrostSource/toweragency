@@ -132,4 +132,14 @@
 			"sounds/misc/fire_woosh.vsnd",
 		]
 	}
+	
+	"Tower.Music.EndingMusic" =
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		vsnd_files =
+		[
+			"sounds/music/ending_music.vsnd",
+		]
+	}
 }

@@ -1,0 +1,127 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "BodyGroupList"
+				children = 
+				[
+					{
+						_class = "BodyGroup"
+						name = "text"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								name = "toweragency"
+								meshes = 
+								[
+									"toweragency",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "by"
+								meshes = 
+								[
+									"by",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "frostepex"
+								meshes = 
+								[
+									"frostepex",
+								]
+							},
+							{
+								_class = "BodyGroupChoice"
+								name = "iohnnyboy"
+								meshes = 
+								[
+									"iohnnyboy",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "tower.vmat"
+								to = "materials/misc/white_doublesided_emissive.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "by"
+						filename = "models/ending_text/ending_credit_text_by.fbx"
+						import_scale = 10.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "frostepex"
+						filename = "models/ending_text/ending_credit_text_frostepex.fbx"
+						import_scale = 10.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "iohnnyboy"
+						filename = "models/ending_text/ending_credit_text_iohnnyboy.fbx"
+						import_scale = 10.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "toweragency"
+						filename = "models/ending_text/ending_credit_text_tower_agency.fbx"
+						import_scale = 10.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}
