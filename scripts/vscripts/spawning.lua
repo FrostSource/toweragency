@@ -14,7 +14,7 @@ local ItemPool = {
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 3 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.7, max = 14 },
         { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.5, max = 7 },
-        { class = 'item_hlvr_clip_rapidfire', weight = 0.6, max = 8 },
+        { class = 'item_hlvr_clip_rapidfire', weight = 0.5, max = 8 },
         { class = 'item_healthvial', weight = 0.25, max = 4 },
         { class = 'item_hlvr_grenade_frag', weight = 0.05, max = 1 },
     },
@@ -33,9 +33,9 @@ local ItemPool = {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.15 },
         { class = 'item_healthvial', weight = 0.5, max = 8 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.8 },
-        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.15 },
-        { class = 'item_hlvr_clip_rapidfire', weight = 0.8 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.9 },
+        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.6 },
+        { class = 'item_hlvr_clip_rapidfire', weight = 0.9 },
     },
     -- 4th floor (white arena RESTOCK)
     {

@@ -20,3 +20,8 @@ function AttachHand()
         thisEntity:SetLocalOrigin(Vector(-3, 4, -0.2));
     end
 end
+
+function Func() print('hi') DoEntFire('@chamber_pulled','Trigger','',0,nil,nil) end
+local gun = Entities:FindByClassnameNearest('hlvr_weapon_energygun', Entities:GetLocalPlayer():GetOrigin(), 256)
+print(gun:GetClassname(),gun:GetName())
+gun:RedirectOutput('OnSlidePulled', 'Func', thisEntity)
