@@ -1,0 +1,128 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/briefcase/dmx/mesh/briefcase_base_buttonless.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = ""
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = true
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						name = "bottom"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ -0.009866, 0.950654, -0.153213 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 18.331377, 0.395285, 15.627232 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "right"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ -9.220476, -0.053026, -0.153213 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.235004, 2.239625, 15.627232 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "left"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ 9.241386, -0.010566, -0.153213 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.21441, 2.317726, 15.627232 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "back"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ -0.009866, -0.030003, -7.967876 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 18.331377, 2.3566, 0.300165 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "front"
+						parent_bone = ""
+						surface_prop = "prop.luggage_small"
+						collision_prop = "default"
+						origin = [ -0.009866, -0.042454, 7.711898 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 18.331377, 2.381501, 0.264535 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "lock_right"
+						parent_bone = ""
+						surface_prop = "prop.metal"
+						collision_prop = "default"
+						origin = [ -5.632182, -0.172234, 7.972821 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 3.552788, 1.472749, 0.27626 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "lock_left"
+						parent_bone = ""
+						surface_prop = "prop.metal"
+						collision_prop = "default"
+						origin = [ 5.660645, -0.172234, 7.972821 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 3.552788, 1.472749, 0.27626 ]
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}
