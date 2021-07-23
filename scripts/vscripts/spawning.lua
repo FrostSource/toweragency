@@ -151,7 +151,7 @@ function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
     local target = targets[rnd]
 
     -- Spawn keycard
-    SpawnEntityFromTableSynchronous('prop_physics', {
+    local keycard = SpawnEntityFromTableSynchronous('prop_physics', {
         origin = target:GetOrigin(),
         angles = RandomInt(0,120)..' '..RandomInt(0,120)..' '..RandomInt(0,120),
 
@@ -162,6 +162,9 @@ function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
         rendercolor = keycard_color..' 255',
         CanDepositInItemHolder = '1'
     })
+    --DoEntFireByInstanceHandle(keycard, "RunScriptCode", "DoIncludeScript('keycard.lua', thisEntity)", 0, nil, nil)
+    DoIncludeScript('keycard.lua', keycard:GetPrivateScriptScope())
+
     --debugoverlay:Sphere(target:GetOrigin(), 16, 0, 255, 0, 255, true, 60)
 end
 
