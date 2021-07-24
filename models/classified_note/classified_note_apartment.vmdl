@@ -123,6 +123,36 @@
 						use_global_default = false
 						global_default_material = ""
 					},
+					{
+						_class = "MaterialGroup"
+						name = "eye_both_sides"
+						remaps = 
+						[
+							{
+								from = "models/classified_note/materials/classified_note_intro.vmat"
+								to = "models/classified_note/materials/classified_note_eye.vmat"
+							},
+							{
+								from = "models/classified_note/materials/classified_note_eye.vmat"
+								to = "models/classified_note/materials/classified_note_eye.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "eye_one_side"
+						remaps = 
+						[
+							{
+								from = "models/classified_note/materials/classified_note_intro.vmat"
+								to = "models/classified_note/materials/classified_note_eye.vmat"
+							},
+							{
+								from = "models/classified_note/materials/classified_note_eye.vmat"
+								to = "models/classified_note/materials/classified_note_blank.vmat"
+							},
+						]
+					},
 				]
 			},
 			{
