@@ -21,6 +21,28 @@
 						use_global_default = false
 						global_default_material = ""
 					},
+					{
+						_class = "MaterialGroup"
+						name = "emissive"
+						remaps = 
+						[
+							{
+								from = "materials/misc/white_zdisabled.vmat"
+								to = "materials/misc/super_emissive_pink.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "white"
+						remaps = 
+						[
+							{
+								from = "materials/misc/white_zdisabled.vmat"
+								to = "materials/choreo/vault/vault_white_emissive.vmat"
+							},
+						]
+					},
 				]
 			},
 			{
