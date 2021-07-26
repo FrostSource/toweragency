@@ -3,7 +3,7 @@ local ItemPool = {
     -- 1st floor (base)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 2 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 1 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.8, max = 14 },
         { class = 'item_healthvial', weight = 0.25, max = 3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.05, max = 1 },
@@ -11,9 +11,9 @@ local ItemPool = {
     -- 2nd floor (damaged)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 3 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 1 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.7, max = 14 },
-        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.5, max = 7 },
+        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.5, max = 7 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.5, max = 8 },
         { class = 'item_healthvial', weight = 0.25, max = 4 },
         { class = 'item_hlvr_grenade_frag', weight = 0.05, max = 1 },
@@ -21,40 +21,48 @@ local ItemPool = {
     -- 3rd floor (construction)
     {
         { class = 'item_hlvr_clip_energygun', weight = 0.9 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.08 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.08, max = 1 },
         { class = 'item_healthvial', weight = 0.3, max = 5 },
         { class = 'item_hlvr_grenade_frag', weight = 0.2 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.6 },
-        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.4 },
+        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.4 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.7 },
     },
     -- 4th floor (white arena)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.15 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.15, max = 1 },
         { class = 'item_healthvial', weight = 0.5, max = 8 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.9 },
-        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.6 },
+        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.6 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.9 },
     },
+    -- DEPRECATED
     -- 4th floor (white arena RESTOCK)
-    {
-        { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.3 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.7 },
-        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.3 },
-        { class = 'item_hlvr_clip_rapidfire', weight = 0.5 },
-    },
+    --{
+    --    { class = 'item_hlvr_clip_energygun', weight = 1 },
+    --    { class = 'item_hlvr_clip_energygun_multiple', weight = 0.3 },
+    --    { class = 'item_hlvr_clip_shotgun_single', weight = 0.7 },
+    --    { class = 'item_hlvr_clip_shotgun_pair', weight = 0.3 },
+    --    { class = 'item_hlvr_clip_rapidfire', weight = 0.5 },
+    --},
     -- 5th floor (ending)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1 },
+        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1, max = 1 },
         { class = 'item_healthvial', weight = 0.2, max = 2 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.75 },
-        { class = 'item_hlvr_clip_shotgun_multiple', weight = 0.3 },
+        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.3 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.4 },
     },
 }
+
+ItemDistribution = {nil,nil,nil,nil,nil}
+
+function Activate()
+    Convars:RegisterCommand("tower_item_distribution", PrintDistribution, "Show item distribution per floor.", 0)
+    print("item pool count", #ItemPool)
+end
 
 function GetItemWeightTotal(index)
     local weight_sum = 0
@@ -117,7 +125,7 @@ function SpawnItems(target_name, amount, index)
 
         local class = item.class
         local count_per_this_item = 1
-        if item.class == 'item_hlvr_clip_shotgun_multiple' then
+        if item.class == 'item_hlvr_clip_shotgun_pair' then
             class = 'item_hlvr_clip_shotgun_single'
             count_per_this_item = 2
         end
@@ -132,6 +140,8 @@ function SpawnItems(target_name, amount, index)
         end
 
     end
+
+    ItemDistribution[index] = itemCount
 end
 
 function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
@@ -174,4 +184,19 @@ function DebugShowKeycards()
         debugoverlay:Sphere(card:GetOrigin(), 16, 0, 255, 0, 255, true, 60)
     end
 end
+
+function PrintDistribution(_, index)
+    index = tonumber(index)
+    if index == nil then
+        print("Please call command with a floor index for item distribution.")
+    elseif ItemDistribution[index] == nil then
+        print("Floor specified doesn't exist or hasn't been generated yet.")
+    else
+        print("Ammo distribution for floor "..index..":")
+        for k,v in pairs(ItemDistribution[index]) do
+            print("",k,v)
+        end
+    end
+end
+
 
