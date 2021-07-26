@@ -142,6 +142,9 @@ function SpawnItems(target_name, amount, index)
     end
 
     ItemDistribution[index] = itemCount
+    if IsInToolsMode() then
+        PrintDistribution(nil, index)
+    end
 end
 
 function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
