@@ -4,7 +4,7 @@ local ItemPool = {
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
         { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 1 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.8, max = 14 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.7, max = 14 },
         { class = 'item_healthvial', weight = 0.25, max = 3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.05, max = 1 },
     },
