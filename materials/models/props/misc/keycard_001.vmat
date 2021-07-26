@@ -8,6 +8,7 @@ Layer0
 	F_TINT_MASK 1
 
 	//---- PBR ----
+	F_SELF_ILLUM 1
 	F_SPECULAR 1
 
 	//---- Ambient Occlusion ----
@@ -39,6 +40,14 @@ Layer0
 
 	//---- Roughness ----
 	TextureRoughness "[0.376471 0.376471 0.376471 0.000000]"
+
+	//---- Self Illum ----
+	g_flSelfIllumAlbedoFactor "1.000"
+	g_flSelfIllumBrightness "0.000"
+	g_flSelfIllumScale "1.000"
+	g_vSelfIllumScrollSpeed "[0.000 0.000]"
+	g_vSelfIllumTint "[1.000000 1.000000 1.000000 0.000000]"
+	TextureSelfIllumMask "[0.100000 0.100000 0.100000 0.000000]"
 
 	//---- Texture Coordinates ----
 	g_nScaleTexCoordUByModelScaleAxis "0"
