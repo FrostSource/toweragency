@@ -3,39 +3,39 @@ local ItemPool = {
     -- 1st floor (base)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 1 },
+        --{ class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 1 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.7, max = 14 },
-        { class = 'item_healthvial', weight = 0.25, max = 3 },
+        { class = 'item_healthvial', weight = 0.2, max = 2 },
         { class = 'item_hlvr_grenade_frag', weight = 0.05, max = 1 },
     },
     -- 2nd floor (damaged)
     {
         { class = 'item_hlvr_clip_energygun', weight = 0.95 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 1 },
+        --{ class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 1 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.7, max = 7 },
         { class = 'item_hlvr_clip_shotgun_pair', weight = 0.4, max = 4 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.5, max = 8 },
-        { class = 'item_healthvial', weight = 0.25, max = 4 },
+        { class = 'item_healthvial', weight = 0.2, max = 3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.05, max = 1 },
     },
     -- 3rd floor (construction)
     {
         { class = 'item_hlvr_clip_energygun', weight = 0.9 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.08, max = 1 },
+        --{ class = 'item_hlvr_clip_energygun_multiple', weight = 0.08, max = 1 },
         { class = 'item_healthvial', weight = 0.3, max = 5 },
-        { class = 'item_hlvr_grenade_frag', weight = 0.2 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.6 },
-        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.4 },
-        { class = 'item_hlvr_clip_rapidfire', weight = 0.7 },
+        { class = 'item_hlvr_grenade_frag', weight = 0.2, max = 3 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.6, max = 9 },
+        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.4, max = 4 },
+        { class = 'item_hlvr_clip_rapidfire', weight = 0.7, max = 6 },
     },
     -- 4th floor (white arena)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.15, max = 1 },
+        --{ class = 'item_hlvr_clip_energygun_multiple', weight = 0.15, max = 1 },
         { class = 'item_healthvial', weight = 0.5, max = 8 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.9 },
-        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.6 },
-        { class = 'item_hlvr_clip_rapidfire', weight = 0.9 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.9, max = 7 },
+        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.6, max = 3 },
+        { class = 'item_hlvr_clip_rapidfire', weight = 0.9, max = 6 },
     },
     -- DEPRECATED
     -- 4th floor (white arena RESTOCK)
@@ -49,7 +49,7 @@ local ItemPool = {
     -- 5th floor (ending)
     {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
-        { class = 'item_hlvr_clip_energygun_multiple', weight = 0.1, max = 1 },
+        --{ class = 'item_hlvr_clip_energygun_multiple', weight = 0.1, max = 1 },
         { class = 'item_healthvial', weight = 0.2, max = 2 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.75 },
         { class = 'item_hlvr_clip_shotgun_pair', weight = 0.3 },
@@ -58,9 +58,55 @@ local ItemPool = {
 }
 
 ItemDistribution = {nil,nil,nil,nil,nil}
+Weapon = {
+    hand_use_controller = 0,
+    hlvr_weapon_energygun = 1,
+    hlvr_weapon_shotgun = 2,
+    hlvr_weapon_rapidfire = 3
+}
 
-function Activate()
+StoredItems = StoredItems or {
+    energygun = 0,
+    shotgun = 0,
+    rapidfire = 0,
+    hp = 0,
+    grenade = 0,
+}
+
+local function SetCurrentWeapon(weapon)
+    thisEntity:Attribute_SetIntValue("CurrentWeapon", Weapon[weapon])
+end
+local function GetCurrentWeapon()
+    return thisEntity:Attribute_GetIntValue("CurrentWeapon", 0)
+end
+local function SaveStoredItems()
+    thisEntity:Attribute_SetIntValue("StoredItemEnergygun", StoredItems.energygun)
+    thisEntity:Attribute_SetIntValue("StoredItemShotgun", StoredItems.shotgun)
+    thisEntity:Attribute_SetIntValue("StoredItemRapidfire", StoredItems.rapidfire)
+    thisEntity:Attribute_SetIntValue("StoredItemHp", StoredItems.hp)
+    thisEntity:Attribute_SetIntValue("StoredItemGrenade", StoredItems.grenade)
+end
+local function LoadStoredItems()
+    StoredItems.energygun = thisEntity:Attribute_GetIntValue("StoredItemEnergygun", 0)
+    StoredItems.shotgun = thisEntity:Attribute_GetIntValue("StoredItemShotgun", 0)
+    StoredItems.rapidfire = thisEntity:Attribute_GetIntValue("StoredItemRapidfire", 0)
+    StoredItems.hp = thisEntity:Attribute_GetIntValue("StoredItemHp", 0)
+    StoredItems.grenade = thisEntity:Attribute_GetIntValue("StoredItemGrenade", 0)
+end
+
+function Activate(activateType)
+    if activateType == 2 then
+        LoadStoredItems()
+        for k,v in pairs(StoredItems) do
+            print(k,v)
+        end
+    end
     Convars:RegisterCommand("tower_item_distribution", PrintDistribution, "Show item distribution per floor.", 0)
+    ListenToGameEvent("player_stored_item_in_itemholder", PlayerStoredItemInItemholder, nil)
+    ListenToGameEvent("player_removed_item_from_itemholder", PlayerRemovedItemFromItemholder, nil)
+    ListenToGameEvent("player_drop_ammo_in_backpack", PlayerDropAmmoInBackpack, nil)
+    ListenToGameEvent("player_retrieved_backpack_clip", PlayerRetrievedBackpackClip, nil)
+    ListenToGameEvent("weapon_switch", WeaponSwitch, nil)
     print("item pool count", #ItemPool)
 end
 
@@ -200,6 +246,79 @@ function PrintDistribution(_, index)
             print("",k,v)
         end
     end
+end
+
+-- Ammo/Item tracking
+
+function PlayerDropAmmoInBackpack(data)
+    --print(data, data.ammotype)
+    if data.ammotype == "Pistol" then
+        StoredItems.energygun = StoredItems.energygun + 1
+        --print("stored energygun", StoredItems.energygun)
+    elseif data.ammotype == "Buckshot" then
+        StoredItems.shotgun = StoredItems.shotgun + 1
+        --print("stored shotgun", StoredItems.shotgun)
+    elseif data.ammotype == "SMG1" then
+        StoredItems.rapidfire = StoredItems.rapidfire + 1
+        --print("stored rapidfire", StoredItems.rapidfire)
+    end
+    SaveStoredItems()
+end
+
+function PlayerRetrievedBackpackClip()
+    local weapon = GetCurrentWeapon()
+    if weapon == Weapon.hlvr_weapon_energygun or weapon == Weapon.hand_use_controller then
+        StoredItems.energygun = StoredItems.energygun -1
+        --print("Took out energygun", StoredItems.energygun)
+    elseif weapon == Weapon.hlvr_weapon_shotgun then
+        StoredItems.shotgun = StoredItems.shotgun - 1
+        --print("Took out shotgun", StoredItems.shotgun)
+    elseif weapon == Weapon.hlvr_weapon_rapidfire then
+        StoredItems.rapidfire = StoredItems.rapidfire - 1
+        --print("Took out rapidfire", StoredItems.rapidfire)
+    else
+        --print("Took out something?")
+    end
+    SaveStoredItems()
+end
+
+function WeaponSwitch(data)
+    SetCurrentWeapon(data.item)
+end
+
+function PlayerStoredItemInItemholder(data)
+    if data.item == "item_hlvr_grenade_frag" then
+        StoredItems.grenade = StoredItems.grenade + 1
+    elseif data.item == "item_healthvial" then
+        StoredItems.hp = StoredItems.hp + 1
+    end
+    SaveStoredItems()
+end
+
+function PlayerRemovedItemFromItemholder(data)
+    --print('wrist', data.item)
+    if data.item == "item_hlvr_grenade_frag" then
+        StoredItems.grenade = StoredItems.grenade - 1
+    elseif data.item == "item_healthvial" then
+        StoredItems.hp = StoredItems.hp - 1
+    end
+    SaveStoredItems()
+end
+
+function GetEnergygunAmmo()
+    DoEntFire("@player_item_count_output", "SetValue", StoredItems.energygun, 0, nil, nil)
+end
+function GetShotgunAmmo()
+    DoEntFire("@player_item_count_output", "SetValue", StoredItems.shotgun, 0, nil, nil)
+end
+function GetRapidfireAmmo()
+    DoEntFire("@player_item_count_output", "SetValue", StoredItems.rapidfire, 0, nil, nil)
+end
+function GetHealthPens()
+    DoEntFire("@player_item_count_output", "SetValue", StoredItems.hp, 0, nil, nil)
+end
+function GetGrenades()
+    DoEntFire("@player_item_count_output", "SetValue", StoredItems.grenade, 0, nil, nil)
 end
 
 
