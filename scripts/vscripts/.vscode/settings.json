@@ -5,6 +5,12 @@
         "RandomInt",
         "SpawnEntityFromTableSynchronous",
         "QAngle",
-        "debugoverlay"
+        "debugoverlay",
+        "ListenToGameEvent",
+        "Convars",
+        "thisEntity",
+        "IsInToolsMode",
+        "DoIncludeScript",
+        "DoEntFire"
     ]
 }
