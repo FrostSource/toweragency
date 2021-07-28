@@ -11,6 +11,7 @@
         "thisEntity",
         "IsInToolsMode",
         "DoIncludeScript",
-        "DoEntFire"
+        "DoEntFire",
+        "DoEntFireByInstanceHandle"
     ]
 }

@@ -305,20 +305,28 @@ function PlayerRemovedItemFromItemholder(data)
     SaveStoredItems()
 end
 
-function GetEnergygunAmmo()
-    DoEntFire("@player_item_count_output", "SetValue", StoredItems.energygun, 0, nil, nil)
+local function OutputValue(caller, value)
+    if caller:GetClassname() ~= "math_counter" then
+        Warning("Warning: Entity requesting item count must be math_counter.")
+        return
+    end
+    DoEntFireByInstanceHandle(caller, "SetValue", value.."", 0, nil, nil)
 end
-function GetShotgunAmmo()
-    DoEntFire("@player_item_count_output", "SetValue", StoredItems.shotgun, 0, nil, nil)
+
+function GetEnergygunAmmo(data) 
+    OutputValue(data.caller, StoredItems.energygun)
 end
-function GetRapidfireAmmo()
-    DoEntFire("@player_item_count_output", "SetValue", StoredItems.rapidfire, 0, nil, nil)
+function GetShotgunAmmo(data)
+    OutputValue(data.caller, StoredItems.shotgun)
 end
-function GetHealthPens()
-    DoEntFire("@player_item_count_output", "SetValue", StoredItems.hp, 0, nil, nil)
+function GetRapidfireAmmo(data)
+    OutputValue(data.caller, StoredItems.rapidfire)
 end
-function GetGrenades()
-    DoEntFire("@player_item_count_output", "SetValue", StoredItems.grenade, 0, nil, nil)
+function GetHealthPens(data)
+    OutputValue(data.caller, StoredItems.hp)
+end
+function GetGrenades(data)
+    OutputValue(data.caller, StoredItems.grenade)
 end
 
 
