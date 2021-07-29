@@ -12,6 +12,7 @@
         "IsInToolsMode",
         "DoIncludeScript",
         "DoEntFire",
-        "DoEntFireByInstanceHandle"
+        "DoEntFireByInstanceHandle",
+        "Vector"
     ]
 }

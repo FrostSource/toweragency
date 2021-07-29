@@ -212,7 +212,8 @@ function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
     -- Spawn keycard
     local keycard = SpawnEntityFromTableSynchronous('prop_physics', {
         origin = target:GetOrigin(),
-        angles = RandomInt(0,120)..' '..RandomInt(0,120)..' '..RandomInt(0,120),
+        --angles = RandomInt(0,120)..' '..RandomInt(0,120)..' '..RandomInt(0,120),
+        angles = Vector(0,RandomInt(0,359),RandomInt(0,1)*180),
 
         damagefilter = '@filter_damage_keycard',
         targetname = keycard_name,
