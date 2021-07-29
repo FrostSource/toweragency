@@ -14,7 +14,7 @@ local ItemPool = {
         --{ class = 'item_hlvr_clip_energygun_multiple', weight = 0.09, max = 1 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.7, max = 7 },
         { class = 'item_hlvr_clip_shotgun_pair', weight = 0.4, max = 4 },
-        { class = 'item_hlvr_clip_rapidfire', weight = 0.5, max = 8 },
+        { class = 'item_hlvr_clip_rapidfire', weight = 0.5, max = 5 },
         { class = 'item_healthvial', weight = 0.2, max = 3 },
         { class = 'item_hlvr_grenade_frag', weight = 0.05, max = 1 },
     },
@@ -22,7 +22,7 @@ local ItemPool = {
     {
         { class = 'item_hlvr_clip_energygun', weight = 0.9 },
         --{ class = 'item_hlvr_clip_energygun_multiple', weight = 0.08, max = 1 },
-        { class = 'item_healthvial', weight = 0.3, max = 5 },
+        { class = 'item_healthvial', weight = 0.33, max = 5 },
         { class = 'item_hlvr_grenade_frag', weight = 0.2, max = 3 },
         { class = 'item_hlvr_clip_shotgun_single', weight = 0.6, max = 9 },
         { class = 'item_hlvr_clip_shotgun_pair', weight = 0.4, max = 4 },
