@@ -153,6 +153,21 @@
 							},
 						]
 					},
+					{
+						_class = "MaterialGroup"
+						name = "wait"
+						remaps = 
+						[
+							{
+								from = "models/classified_note/materials/classified_note_intro.vmat"
+								to = "models/classified_note/materials/classified_note_intro_wait.vmat"
+							},
+							{
+								from = "models/classified_note/materials/classified_note_eye.vmat"
+								to = "models/classified_note/materials/classified_note_eye.vmat"
+							},
+						]
+					},
 				]
 			},
 			{
