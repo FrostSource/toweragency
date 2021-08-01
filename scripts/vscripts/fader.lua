@@ -4,6 +4,8 @@ TargetFadeValue = TargetFadeValue or 0
 TargetToFade = TargetToFade or nil
 CurrentFadeValue = 0
 
+-- deprecate this old fader code and use more efficient method
+
 function FadeByModel(class, model)
     local ents = Entities:FindAllByClassname(class)
     for _,ent in ipairs(ents) do
