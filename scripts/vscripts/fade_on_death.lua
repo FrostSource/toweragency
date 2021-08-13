@@ -1,6 +1,14 @@
 
 function Activate()
-    ListenToGameEvent("npc_ragdoll_created", NPCRagdollCreated, nil)
+    if thisEntity:IsNPC() then
+        ListenToGameEvent("npc_ragdoll_created", NPCRagdollCreated, nil)
+    elseif thisEntity:GetClassname() == "prop_physics" then
+        thisEntity:RedirectOutput("OnBreak", "OnBreak", thisEntity)
+    end
+end
+
+function OnBreak()
+    
 end
 
 function NPCRagdollCreated(data)
