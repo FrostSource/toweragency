@@ -214,6 +214,7 @@ function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
         origin = target:GetOrigin(),
         --angles = RandomInt(0,120)..' '..RandomInt(0,120)..' '..RandomInt(0,120),
         angles = Vector(0,RandomInt(0,359),RandomInt(0,1)*180),
+        vscripts = "keycard",
 
         damagefilter = '@filter_damage_keycard',
         targetname = keycard_name,
@@ -223,7 +224,28 @@ function SpawnKeycard(target_name, keycard_name, keycard_color, keycard_skin)
         CanDepositInItemHolder = '1'
     })
     --DoEntFireByInstanceHandle(keycard, "RunScriptCode", "DoIncludeScript('keycard.lua', thisEntity)", 0, nil, nil)
-    DoIncludeScript('keycard.lua', keycard:GetPrivateScriptScope())
+    --DoIncludeScript('keycard.lua', keycard:GetPrivateScriptScope())
+
+    -- Spawn light
+    --[[ light can't spawn this way
+    local light = SpawnEntityFromTableSynchronous("light_spot",{
+        origin = target:GetOrigin(),
+        color = keycard_color .. " 255",
+        brightness = 0.004,
+        range = 5,
+        castshadows = 0,
+        renderspecular = 0,
+        rendertransmissive = 0,
+        directlight = 2,
+        indirectlight = 0,
+        attenuation1 = 1,
+        attenuation2 = 0,
+        baked_light_indexing = 1,
+    })
+    light:SetParent(keycard, "")
+    light:SetLocalOrigin(Vector(0,0,0))
+    light:SetLocalAngles(0,0,0)
+    ]]
 
     --debugoverlay:Sphere(target:GetOrigin(), 16, 0, 255, 0, 255, true, 60)
 end

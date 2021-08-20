@@ -1,7 +1,9 @@
 
 
 --print("KEYCARD")
-thisEntity:RedirectOutput("OnPlayerPickup", "OnPlayerPickup", thisEntity)
+function Activate()
+    thisEntity:RedirectOutput("OnPlayerPickup", "OnPlayerPickup", thisEntity)
+end
 
 function OnPlayerPickup()
     local name = thisEntity:GetName()
