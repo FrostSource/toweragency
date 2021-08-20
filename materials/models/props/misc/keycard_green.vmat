@@ -42,8 +42,8 @@ Layer0
 	TextureRoughness "[0.376471 0.376471 0.376471 0.000000]"
 
 	//---- Self Illum ----
-	g_flSelfIllumAlbedoFactor "1.000"
-	g_flSelfIllumBrightness "-2.000"
+	g_flSelfIllumAlbedoFactor "0.592"
+	g_flSelfIllumBrightness "1.304"
 	g_flSelfIllumScale "1.000"
 	g_vSelfIllumScrollSpeed "[0.000 0.000]"
 	g_vSelfIllumTint "[0.466667 0.517647 0.721569 1.000000]"
