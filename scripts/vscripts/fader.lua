@@ -59,6 +59,16 @@ function FadeValueOutput(from, to, frames)
     thisEntity:SetThink(FadeThink, 'FadeThink', 0)
 end
 
+function DissolveActivator(data)
+    local name = data.activator:GetName()
+    if name == "" then
+        name = DoUniqueString("")
+        data.activator:SetEntityName(name)
+    end
+    local d = SpawnEntityFromTableSynchronous("env_entity_dissolver",{})
+    DoEntFireByInstanceHandle(d, "Dissolve", name, 0, nil, nil)
+end
+
 -- local id = Convars:GetBool('hlvr_left_hand_primary') and 1 or 0;
 -- local hand = Entities:GetLocalPlayer():GetHMDAvatar():GetVRHand(id);
 -- thisEntity:SetParent(hand, '');
