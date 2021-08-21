@@ -33,9 +33,10 @@ local ItemPool = {
         { class = 'item_hlvr_clip_energygun', weight = 1 },
         --{ class = 'item_hlvr_clip_energygun_multiple', weight = 0.15, max = 1 },
         { class = 'item_healthvial', weight = 0.5, max = 8 },
-        { class = 'item_hlvr_clip_shotgun_single', weight = 0.9, max = 7 },
-        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.6, max = 3 },
+        { class = 'item_hlvr_clip_shotgun_single', weight = 0.8, max = 6 },
+        { class = 'item_hlvr_clip_shotgun_pair', weight = 0.45, max = 2 },
         { class = 'item_hlvr_clip_rapidfire', weight = 0.9, max = 6 },
+        { class = 'item_hlvr_grenade_frag', weight = 0.3, max = 2 },
     },
     -- DEPRECATED
     -- 4th floor (white arena RESTOCK)
